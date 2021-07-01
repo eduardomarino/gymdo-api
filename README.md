@@ -1,4 +1,7 @@
 # Gymdo
+POC Backend API to manage users, gym trainings and exercises.
+
+Built with: Elixir, Phoenix Framework, PostgreSQL and GraphQL.
 
 To start your Phoenix server:
 
