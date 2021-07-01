@@ -9,6 +9,16 @@ defmodule GymdoWeb.Router do
     pipe_through :api
   end
 
+  scope "/api" do
+    pipe_through :api
+
+    # Absinthe config
+    # Route for external use
+    forward "/graphql", Absinthe.Plug, schema: GymdoWeb.Schema
+    # Route for internal use
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: GymdoWeb.Schema
+  end
+
   # Enables LiveDashboard only for development
   #
   # If you want to use the LiveDashboard in production, you should put
