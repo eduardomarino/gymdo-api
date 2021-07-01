@@ -7,6 +7,7 @@ defmodule GymdoWeb.Router do
 
   scope "/api", GymdoWeb do
     pipe_through :api
+    get "/", IMCController, :index
   end
 
   scope "/api" do
