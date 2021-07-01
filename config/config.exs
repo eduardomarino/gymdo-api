@@ -10,6 +10,11 @@ use Mix.Config
 config :gymdo,
   ecto_repos: [Gymdo.Repo]
 
+# UUID use config
+config :gymdo, Gymdo.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :gymdo, GymdoWeb.Endpoint,
   url: [host: "localhost"],
